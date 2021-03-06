@@ -1,0 +1,19 @@
+{
+  "name": "noteapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netman5/node-note-app.git"
+  },
+  "author": "Ola Ishola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netman5/node-note-app/issues"
+  },
+  "homepage": "https://github.com/netman5/node-note-app#readme"
+}
