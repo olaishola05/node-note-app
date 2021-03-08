@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/netman5/node-note-app/issues"
   },
-  "homepage": "https://github.com/netman5/node-note-app#readme"
+  "homepage": "https://github.com/netman5/node-note-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.19",
+    "morgan": "^1.10.0"
+  }
 }

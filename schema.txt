@@ -1,0 +1,8 @@
+schema formats
+
+const schema = {
+    title,
+    snippet,
+    body,
+    author
+}

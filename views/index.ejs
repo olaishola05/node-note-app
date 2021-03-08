@@ -1,0 +1,26 @@
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include ('./partials/nav.ejs') %>
+            <p>Welcome to our favorite note app</h1>
+
+                <% notes.forEach(note=> { %>
+                    <h2>
+                        <%= note.title %>
+                    </h2>
+
+                    <span>
+                        Author: <%= note.author %>
+                    </span>
+
+                    <p>
+                        <%= note.description %>
+                    </p>
+                    <% }) %>
+
+                        <%- include ('./partials/footer.ejs') %>
+    </body>
+
+</html>
