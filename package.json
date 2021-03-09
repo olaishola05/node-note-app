@@ -18,6 +18,7 @@
   "homepage": "https://github.com/netman5/node-note-app#readme",
   "dependencies": {
     "ejs": "^3.1.6",
+    "env": "0.0.2",
     "express": "^4.17.1",
     "mongoose": "^5.11.19",
     "morgan": "^1.10.0"

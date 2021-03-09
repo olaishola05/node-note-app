@@ -6,7 +6,9 @@ const mongoose = require("mongoose");
 const app = express();
 
 app.set("view engine", "ejs");
-
+// db connection
+const db_password = process.env.db_password;
+const db_connect = `mongodb+srv://noteUser:${db_password}@notescluster.f21hb.mongodb.net/noteDB?retryWrites=true&w=majority`;
 // middleware
 app.use(morgan("dev"));
 app.use(express.static("public"));
