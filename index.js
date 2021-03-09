@@ -43,6 +43,11 @@ app.get("/about", (req, res) => {
     res.render("about", { title: "About Us" });
 });
 
+// create notes
+app.get("/notes/create", (req, res) => {
+    res.render("create", { title: "Create New Note" });
+});
+
 // for error page
 app.use((req, res) => {
     res.status(404).render("404", { title: "page not found" });
