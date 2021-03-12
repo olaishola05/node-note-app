@@ -5,16 +5,12 @@
     <body>
         <%- include ('./partials/nav.ejs') %>
             <p>Express your mind</p>
-            <form action="" method="post">
+            <form action="/notesDB" method="POST">
                 <label for="title">Title:</label>
-                <input type="text">
-
-                <label for="snippet">Snippet:</label>
-                <input type="text">
-
+                <input type="text" id="title" name="title" required>
                 <label for="author">Author:</label>
-                <input type="text"> <br>
-                <textarea name="" id="" cols="60" rows="10"></textarea>
+                <input type="text" id="author" name="author" required> <br>
+                <textarea id="body" name="body" required>Add your new notes here....</textarea>
 
                 <button type="submit">Save</button>
             </form>

@@ -7,7 +7,6 @@ const Note = require("./models/notes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.set("view engine", "ejs");
 
 // db connection
 const db_connect = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@notescluster.f21hb.mongodb.net/notesDB?retryWrites=true&w=majority`;
@@ -26,12 +25,15 @@ mongoose
     })
     .catch((err) => console.log(err));
 
+app.set("view engine", "ejs");
 // middleware
 app.use(morgan("dev"));
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     Note.find()
+        .sort({ createdAt: -1 })
         .then((notes) => {
             res.render("index", { title: "Home", notes });
         })
@@ -44,19 +46,17 @@ app.get("/about", (req, res) => {
 
 // create notes
 app.get("/notes/create", (req, res) => {
-    const notes = new Note({
-        title: "Tongue beyond the upper room",
-        author: "James",
-        body:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, facilis nisi possimus reiciendis hic perspiciatis error labore accusamus odio. Doloremque quo id deserunt sequi labore tenetur sunt accusamus incidunt aperiam.",
-    });
-    notes
-        .save()
+    res.render("create", { title: "Create New Note" });
+});
+
+app.get("/notes", (req, res) => {
+    const note = new Note(req.body);
+    console.log(note);
+    note.save()
         .then((result) => {
-            res.send(result);
+            console.log(result);
         })
         .catch((err) => console.log(err));
-    // res.render("create", { title: "Create New Note" });
 });
 
 // for error page
