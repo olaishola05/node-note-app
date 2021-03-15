@@ -32,12 +32,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    Note.find()
-        .sort({ createdAt: -1 })
-        .then((notes) => {
-            res.render("index", { title: "Home", notes });
-        })
-        .catch((err) => console.log(err));
+    res.redirect("/notes");
 });
 
 app.get("/about", (req, res) => {
@@ -50,11 +45,22 @@ app.get("/notes/create", (req, res) => {
 });
 
 app.get("/notes", (req, res) => {
+    Note.find()
+        .sort({ createdAt: -1 })
+        .then((result) => {
+            res.render("index", {
+                title: "Home",
+                notes: result,
+            });
+        })
+        .catch((err) => console.log(err));
+});
+
+app.post("/notes", (req, res) => {
     const note = new Note(req.body);
-    console.log(note);
     note.save()
         .then((result) => {
-            console.log(result);
+            res.redirect("/");
         })
         .catch((err) => console.log(err));
 });
