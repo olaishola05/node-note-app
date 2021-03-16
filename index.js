@@ -65,6 +65,15 @@ app.post("/notes", (req, res) => {
         .catch((err) => console.log(err));
 });
 
+app.get("/notes/id", (req, res) => {
+    const id = req.params.id;
+    Note.findById(id)
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((err) => console.log(err));
+});
+
 // for error page
 app.use((req, res) => {
     res.status(404).render("404", { title: "page not found" });
