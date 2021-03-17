@@ -7,23 +7,17 @@
             <p>Welcome to our favorite note app</h1>
 
                 <% notes.forEach(note=> { %>
-                    <a href="/notes/<%= note.id %> ">
-
+                    <div>
                         <h2>
                             <%= note.title %>
                         </h2>
-
-                        <span>
-                            Author: <span%= note.author %>
-                        </span>
-                        <p>
-                            <%= note.id %>
-                        </p>
                         <p>
                             <%= note.body %>
                         </p>
-
-                    </a>
+                        <span>
+                            <%= note.author %>
+                        </span>
+                    </div>
                     <% }) %>
 
                         <%- include ('./partials/footer.ejs') %>

@@ -69,7 +69,10 @@ app.get("/notes/id", (req, res) => {
     const id = req.params.id;
     Note.findById(id)
         .then((result) => {
-            console.log(result);
+            res.render("details", {
+                title: "Note Details",
+                notes: result,
+            });
         })
         .catch((err) => console.log(err));
 });
