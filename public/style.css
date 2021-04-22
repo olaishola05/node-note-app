@@ -45,8 +45,34 @@ nav ul li {
 
 /* Note homepage */
 .content {
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
     width: 75%;
     padding: 20px;
     margin: 0 auto;
+}
+
+.notes li {
+    list-style-type: circle;
+    /* background: #e0e0e0; */
+    padding: 2px 10px 5px 10px;
+    border-radius: 3px;
+    box-shadow: -6px 12px 8px 0px rgba(21, 113, 108, 0.75);
+    -webkit-box-shadow: -6px 12px 8px 0px
+        rgba(21, 113, 108, 0.75);
+    -moz-box-shadow: -6px 12px 8px 0px rgba(21, 113, 108, 0.75);
+}
+
+.notes a {
+    text-decoration: none;
+    color: black;
+}
+
+.notes span {
+    background: darkgray;
+    color: black;
+    padding: 5px;
+}
+
+.notes {
+    line-height: 0.9;
 }
