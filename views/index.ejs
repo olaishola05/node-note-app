@@ -4,29 +4,32 @@
 
     <body>
         <%- include ('./partials/nav.ejs') %>
-            <p>Welcome to our favorite note app</h1>
+            <div class="content">
+                <p>Welcome to our favorite note app</p>
 
                 <% notes.forEach(note=> { %>
-                    <a href="/notes/<%= note.id %> ">
+                    <ul>
+                        <li>
+                            <a href="/notes/<%= note.id %> ">
 
-                        <h2>
-                            <%= note.title %>
-                        </h2>
+                                <h2>
+                                    <%= note.title %>
+                                </h2>
 
-                        <span>
-                            Author: <span%= note.author %>
-                        </span>
-                        <p>
-                            <%= note.id %>
-                        </p>
-                        <p>
-                            <%= note.body %>
-                        </p>
+                                <span>
+                                    Author: <%= note.author %>
+                                </span>
+                                <p>
+                                    <%= note.body %>
+                                </p>
 
-                    </a>
+                            </a>
+                        </li>
+                    </ul>
                     <% }) %>
+            </div>
 
-                        <%- include ('./partials/footer.ejs') %>
+            <%- include ('./partials/footer.ejs') %>
     </body>
 
 </html>
