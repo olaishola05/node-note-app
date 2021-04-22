@@ -1,8 +1,6 @@
-body {
-    background: beige;
+.home {
     width: 80%;
     height: fit-content;
-    border: 1px solid green;
     margin: 0 auto;
     padding: 10px;
 }
@@ -43,12 +41,19 @@ nav ul li {
     color: black;
 }
 
+/* footer */
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* Note homepage */
 .content {
-    /* border: 1px solid yellowgreen; */
+    border: 1px solid yellowgreen;
     width: 75%;
     padding: 20px;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .notes li {
@@ -75,4 +80,26 @@ nav ul li {
 
 .notes {
     line-height: 0.9;
+}
+
+/* About page */
+
+.about-intro {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about-intro h3 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.image {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid gray;
+}
+
+.image img {
+    width: 100%;
 }
