@@ -194,3 +194,15 @@ label {
     background-color: hotpink;
     color: black;
 }
+
+.details {
+    border-top: 1px solid hotpink;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-btn {
+    width: 100%;
+    border: 1px solid yellowgreen;
+    display: flex;
+}

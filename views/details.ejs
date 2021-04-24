@@ -2,25 +2,30 @@
 
 <%- include('./partials/head.ejs') %>
 
-    <body>
+    <body class="home">
         <%- include ('./partials/nav.ejs') %>
-            <p>Welcome to our favorite note app</h1>
-
-                <% notes.forEach(note=> { %>
-                    <div>
+            <div class="details">
+                <div class="note-details">
+                    <div class="title-btn">
                         <h2>
                             <%= note.title %>
                         </h2>
-                        <p>
-                            <%= note.body %>
-                        </p>
-                        <span>
-                            <%= note.author %>
-                        </span>
-                    </div>
-                    <% }) %>
 
-                        <%- include ('./partials/footer.ejs') %>
+                        <button class="delBtn">X</button>
+                        <button class="edit">Edit</button>
+                    </div>
+                    <p>
+                        Author: <%= note.author %>
+                    </p>
+                    <span>
+                        <%= note.body %>
+                    </span>
+                </div>
+
+
+
+            </div>
+            <%- include ('./partials/footer.ejs') %>
     </body>
 
 </html>

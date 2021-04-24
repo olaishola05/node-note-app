@@ -52,6 +52,8 @@ app.get("/notes", (req, res) => {
                 title: "Home",
                 notes: result,
             });
+
+            // res.send(result);
         })
         .catch((err) => console.log(err));
 });
@@ -65,13 +67,14 @@ app.post("/notes", (req, res) => {
         .catch((err) => console.log(err));
 });
 
-app.get("/notes/id", (req, res) => {
+app.get("/notes/:id", (req, res) => {
     const id = req.params.id;
     Note.findById(id)
         .then((result) => {
+            // the return result is the single note found
             res.render("details", {
                 title: "Note Details",
-                notes: result,
+                note: result,
             });
         })
         .catch((err) => console.log(err));
