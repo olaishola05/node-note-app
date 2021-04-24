@@ -1,3 +1,13 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .home {
     width: 80%;
     height: fit-content;
@@ -83,7 +93,6 @@ footer {
 }
 
 /* About page */
-
 .about-intro {
     width: 70%;
     margin: 0 auto;
@@ -98,6 +107,7 @@ footer {
     width: 600px;
     margin: 0 auto;
     border: 1px solid gray;
+    margin-bottom: 50px;
 }
 
 .image img {
@@ -108,7 +118,79 @@ footer {
 
 .create {
     width: 80%;
-    border: 1px solid teal;
     margin: 0 auto;
     padding: 0px 10px 5px 10px;
+    box-sizing: border-box;
+}
+
+.create h2 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border: 0.2px solid;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    display: block;
+}
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input[type="text"]:focus {
+    background-color: beige;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.1px solid;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+    height: 300px;
+}
+label {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.create form {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.create button {
+    /* remove dafault appearance */
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.create button:hover {
+    background-color: hotpink;
+    color: black;
 }
